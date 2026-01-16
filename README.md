@@ -1,7 +1,7 @@
 <h1 align="center"><img src="./docs/images/banner_ladon.png" alt="ORY Ladon - Policy-based Access Control"></h1>
 
 [![Join the chat at https://www.ory.sh/chat](https://img.shields.io/badge/join-chat-00cc99.svg)](https://www.ory.sh/chat)
-[![Join newsletter](https://img.shields.io/badge/join-newsletter-00cc99.svg)](http://eepurl.com/bKT3N9)
+[![Join newsletter](https://img.shields.io/badge/join-newsletter-00cc99.svg)](https://www.ory.sh/l/sign-up-newsletter)
 
 [![Build Status](https://travis-ci.org/ory/ladon.svg?branch=master)](https://travis-ci.org/ory/ladon)
 [![Coverage Status](https://coveralls.io/repos/ory/ladon/badge.svg?branch=master&service=github)](https://coveralls.io/github/ory/ladon?branch=master)
@@ -212,7 +212,7 @@ var pol = &ladon.DefaultPolicy{
 	Resources: []string{
             "myrn:some.domain.com:resource:123", "myrn:some.domain.com:resource:345",
             "myrn:something:foo:<.+>", "myrn:some.domain.com:resource:<(?!protected).*>",
-            "myrn:some.domain.com:resource:<[[:digit:]]+>"
+            "myrn:some.domain.com:resource:<[[:digit:]]+>",
         },
 
 	// Which actions this policy affects. Supports RegExp
@@ -742,5 +742,5 @@ mockgen -package ladon_test -destination manager_mock_test.go github.com/ory/lad
 By implementing the warden.Manager it is possible to create your own adapters to persist data in a datastore of your choice. Below are a list of third party implementations.
 
 - [Redis and RethinkDB](https://github.com/ory/ladon-community)
-- [CockroachDB](https://github.com/wehco/ladon-crdb)
-- [sql.DB](https://github.com/wirepair/ladonsecuritymanager)
+- [CockroachDB](https://github.com/dwin/ladon-crdb)
+- [sql.DB](https://github.com/wirepair/ladonsqlmanager)
